@@ -1,0 +1,92 @@
+
+/* 🎨 Variables */
+:root {
+  --verde: hsl(75, 94%, 57%);
+  --blanco: hsl(0, 0%, 100%);
+  --gris-700: hsl(0, 0%, 20%);
+  --gris-800: hsl(0, 0%, 12%);
+  --gris-900: hsl(0, 0%, 8%);
+  --fuente-principal: 'Inter', sans-serif;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--gris-900);
+  color: var(--blanco);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+
+.tarjeta {
+  background-color: var(--gris-800);
+  padding: 32px;
+  border-radius: 12px;
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+.nombre {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.ubicacion {
+  font-weight: 600;
+  color: var(--verde);
+  margin-bottom: 24px;
+}
+
+.descripcion {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+.enlaces {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.boton {
+  display: block;
+  padding: 12px;
+  background-color: var(--gris-700);
+  color: var(--blanco);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+ 
+}
+
+.boton:hover {
+  background-color: var(--verde);
+  color: var(--gris-900);
+}
+
+
+.atribucion a {
+  color: var(--verde);
+}

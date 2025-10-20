@@ -1,0 +1,175 @@
+/* === estilos.css (versión final con curvas hacia arriba) === */
+
+/* Importar fuente */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+/* Paleta */
+:root {
+  --blanco: hsl(0, 100%, 100%);
+  --morado-100: hsl(275, 100%, 97%);
+  --morado-600: hsl(292, 16%, 49%);
+  --morado-950: hsl(292, 42%, 14%);
+  --acento: hsl(281, 83%, 54%);
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Fondo general */
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: var(--morado-100);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8rem 1rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Sección morada superior con curvas invertidas */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  background: var(--morado-950);
+  background-image: url("data:image/svg+xml,%3Csvg width='978' height='360' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23AD28EB' stroke-width='2'%3E%3Cpath d='M-74 300c280 230 835-360 1135-140'/%3E%3Cpath d='M-74 240c280 230 835-360 1135-140' opacity='.5'/%3E%3Cpath d='M-74 180c280 230 835-360 1135-140' opacity='.3'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Contenedor principal */
+.contenedor-faqs {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+
+.tarjeta-faq {
+  background: var(--blanco);
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.1);
+  max-width: 540px;
+  width: 100%;
+  padding: 2.5rem;
+  margin-top: -6rem;
+}
+
+/* Encabezado */
+.encabezado-faq {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.icono-faq {
+  width: 28px;
+  height: 28px;
+}
+
+.encabezado-faq h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--morado-950);
+}
+
+/* Items */
+.item-faq {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1.2rem 0;
+}
+
+.item-faq:last-child {
+  border: none;
+}
+
+/* Pregunta */
+.pregunta-faq {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: var(--morado-950);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.pregunta-faq:hover {
+  color: var(--acento);
+}
+
+/* Botón circular */
+.boton-faq {
+  background: var(--acento);
+  color: var(--blanco);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  
+}
+
+.boton-faq:hover {
+  background: hsl(281, 90%, 60%);
+}
+
+.boton-faq::before {
+  content: "+";
+}
+
+.item-faq.abierto .boton-faq::before {
+  content: "−";
+}
+
+/* Respuesta */
+.respuesta-faq {
+  display: none;
+  color: var(--morado-600);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-top: 0.8rem;
+}
+
+.item-faq.abierto .respuesta-faq {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  body {
+    padding: 6rem 1rem;
+  }
+
+  .tarjeta-faq {
+    padding: 1.8rem;
+  }
+
+  .encabezado-faq h1 {
+    font-size: 1.6rem;
+  }
+}
